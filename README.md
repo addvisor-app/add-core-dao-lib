@@ -34,9 +34,7 @@ const dao = connectDB.factory(options);
 
 const id = "5ff320da452fb547dc9a2e6e";
 
-const entity = await dao.collection('colection.name')
-                    .projection(["to","from", "subject", "date"])
-                    .get(id);
+const entity = await dao.collection('colection.name').get(id);
 
 ```
 
@@ -92,6 +90,66 @@ console.log(deleted);
 
 ```
 
+Em alguns cenários podesse trabalhar com parte do documento, visto que outras aplicações podem agregar outros nós ao documento que não dizer a sua aplicação, com isso pode-se manipular a DAO informando o nó a qual esta restrito a trabalhar, conforme exemplos abaixo
+
+Get one document node code:
+
+```javascript
+const dao = require("add-core-dao-lib").factory({
+    client: 'mongodb',
+    connectionString: process.env.CONNECTION_STRING,
+    collection: 'colection.name'
+});
+
+const entity = await dao.node('data.email').get("5ff320da452fb547dc9a2e6e");
+
+```
+
+List document node code:
+
+```javascript
+const dao = require("add-core-dao-lib").factory({
+    client: 'mongodb',
+    connectionString: process.env.CONNECTION_STRING,
+    collection: 'colection.name',
+    node: 'data.email'
+});
+
+const projection = ["to","from", "subject", "date"];
+const filter = {"from":"gabriel.santos@addvisor.com.br"};
+const entity = await dao.projection(projection).list(filter);
+
+```
+
+Insert document node code:
+
+```javascript
+const dao = require("add-core-dao-lib").factory({
+    client: 'mongodb',
+    connectionString: process.env.CONNECTION_STRING,
+    collection: 'colection.name',
+    node: 'data.log'
+});
+
+let entity = {filed1: "data 1", field2: "data 2"..};
+const entity = await dao.insert(entity);
+
+```
+
+Update document node code:
+
+```javascript
+const dao = require("add-core-dao-lib").factory({
+    client: 'mongodb',
+    connectionString: process.env.CONNECTION_STRING,
+    collection: 'colection.name',
+    node: 'data.log'
+});
+
+let entity = {filed1: "data 1", field2: "data 2"..};
+const entity = await dao.update(entity, '60182965d6ff71150043ddc5');
+
+```
 ## License
 
 ADD Cloud - Addvisor
