@@ -4,7 +4,7 @@ add-core-dao-lib é uma library para Data Access Object do pacote ADD. Tem como 
 ## Use
 Install
 
-`npm install https://github.com/gabriel-add/add-core-dao-lib.git --save`
+`npm install https://github.com/addvisor-app/add-core-dao-lib.git --save`
 
 Instace DAO Code:
 
@@ -52,7 +52,7 @@ const options ={
 const dao = connectDB.factory(options);
 
 const projection = ["to","from", "subject", "date"];
-const filter = {"from":"gabriel.santos@addvisor.com.br"};
+const filter = {"from":"addplatform@addvisor.com.br"};
 
 const entities = await dao.projection(projection).list(filter);
 
@@ -116,7 +116,7 @@ const dao = require("add-core-dao-lib").factory({
 });
 
 const projection = ["to","from", "subject", "date"];
-const filter = {"from":"gabriel.santos@addvisor.com.br"};
+const filter = {"from":"addplatform@addvisor.com.br"};
 const entity = await dao.projection(projection).list(filter);
 
 ```
