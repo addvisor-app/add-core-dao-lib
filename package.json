@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "description": "ADD Data Access Object Library",
   "main": "./lib/index.js",
-   
   "bin": {
     "add-core-dao-lib": "bin/dao-lib.js"
   },
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -28,6 +26,9 @@
   },
   "homepage": "https://github.com/gabriel-add/add-core-dao-lib#readme",
   "dependencies": {
-    "mongodb": "^3.6.3"
+    "knex": "^0.95.4",
+    "mongodb": "^3.6.3",
+    "pg": "^8.5.1",
+    "sqlite3": "^5.0.2"
   }
 }
