@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/gabriel-add/add-core-dao-lib#readme",
   "dependencies": {
-    "knex": "^0.95.4",
+    "knex": "^2.4.0",
     "mongodb": "^3.6.3",
     "pg": "^8.5.1",
     "sqlite3": "^5.0.2"
